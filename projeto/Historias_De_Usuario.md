@@ -4,4 +4,4 @@
 * Como aluno, quero efetuar a matrícula, para dar andamento ao meu curso.
 * Como aluno, quero poder cancelar minha matrícula, para interromper o semestre, caso seja necessário
 * Como professor, quero poder visualizar os alunos matriculados em cada disciplina, para manter controle de frequência e notas ao longo do semestre.
-* Como administrador do sistema, preciso que o sistema de matricula notifique o sistema de cobrança no tempo certo, para que o sistema de cobrança efetue a cobrança ao aluno.
+* O sistema de cobrança envia a cobrança ao aluno a partir da matricula efetuada no semestre.
