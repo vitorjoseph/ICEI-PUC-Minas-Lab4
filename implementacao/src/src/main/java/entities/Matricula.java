@@ -1,5 +1,6 @@
 package entities;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -57,8 +58,8 @@ public class Matricula {
 		return codigo_matricula;
 	}
 
-	public Aluno getAluno() {
-		return aluno;
+	public int getCodigoAluno() {
+		return aluno.getCodigo();
 	}
 
 	public ArrayList<OfertaDisciplina> getOfertas() {
@@ -95,7 +96,15 @@ public class Matricula {
 	}
 
 	public void cancelarMatricula() {
-		this.concluida = false;
+		if(LocalDate.now().getYear() == this.ano) {
+			this.concluida = false;
+			this.ofertas.forEach(o -> o.removerAluno(this.aluno));
+		}
+	}
+
+	public int valorCobranca() {
+		// faz a soma do preço de cada disciplina referente as ofertas presentes na matrícula
+		return getOfertas().stream().mapToInt(o -> o.getDisciplina().getPreco()).sum();
 	}
 
 	//#endregion

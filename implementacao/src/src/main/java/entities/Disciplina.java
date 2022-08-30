@@ -6,13 +6,15 @@ public class Disciplina {
 	private String nome;
 	private int creditos;
 	private boolean obrigatoria;
+	private int preco;
 	//#endregion
 
 	//#region CONSTRUCTOR
-	public Disciplina(String nome, int creditos) {
+	public Disciplina(String nome, int creditos, int preco) {
 		this.nome = nome;
 		this.creditos = creditos;
 		this.obrigatoria = false;
+		this.preco = preco;
 	}
 	//#endregion
 
@@ -23,6 +25,10 @@ public class Disciplina {
 
 	public int getCreditos() {
 		return creditos;
+	}
+
+	public int getPreco() {
+		return preco;
 	}
 
 	public boolean isObrigatoria() {

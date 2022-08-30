@@ -48,7 +48,7 @@ public class OfertaDisciplina {
 	}
 
 	public int getQuantidadeAlunos() {
-		return quantidadeAlunos;
+		return getAlunos().size();
 	}
 
 	public boolean isAtivo() {
@@ -60,8 +60,10 @@ public class OfertaDisciplina {
 	//#region METODOS ESPECIFICOS
 
 	public void adicionarAluno(Aluno aluno) {
-		if(this.alunos.size() == 2) {
+		if(!getAlunos().contains(aluno))
 			this.alunos.add(aluno);
+
+		if(this.alunos.size() == 2) {
 			this.ativo = true;
 		}
 	}
