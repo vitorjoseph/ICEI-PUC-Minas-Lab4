@@ -6,25 +6,18 @@ import java.util.Date;
 public class Aluno extends Usuario {
 
 	//#region ATRIBUTOS
-	//#endregion
-
-	//#region CONSTRUCTOR
-	//#endregion
-
-	//#region GETTERS e SETTERS
-	//#endregion
-
-	//#region METODOS ESPECIFICOS
-	//#endregion
-
 	private int codigo_aluno;
 	private Curso curso;
 	private ArrayList<Matricula> matriculas;
+	//#endregion
 
+	//#region CONSTRUCTOR
 	public Aluno(String nome, Date data_nascimento, String endereco) {
 		super(nome, data_nascimento, endereco);
 	}
+	//#endregion
 
+	//#region GETTERS e SETTERS
 	public ArrayList<Matricula> getMatriculas() {
 		return matriculas;
 	}
@@ -32,25 +25,25 @@ public class Aluno extends Usuario {
 	public Curso getCurso() {
 		return curso;
 	}
+	//#endregion
 
-	public void efetuarMatricula(ArrayList<OfertaDisciplina> ofertas) {
-		this.matriculas.add(new Matricula(this, ofertas));
+	//#region METODOS ESPECIFICOS
+	public void solicitarMatricula(ArrayList<OfertaDisciplina> ofertas, int ano, int semestre) {
+		this.matriculas.add(new Matricula(this, ofertas, ano, semestre));
 	}
 
 	public void cancelarMatricula(Matricula matricula) {
 		this.matriculas.remove(matricula);
+		matricula.cancelarMatricula();
 	}
 
-	public void solicitarMatricula() {
+	public void alterarMatricula(Matricula matricula, OfertaDisciplina ofertaAtual, OfertaDisciplina novaOferta){
 		throw new Error("Not implemented!");
 	}
-
-	public void cancelarMatricula() {
-		throw new Error("Not implemented!");
-	}
-
-	public void alterarMatricula() {
-		throw new Error("Not implemented!");
-	}
-
+	//#endregion
 }
+
+
+
+
+

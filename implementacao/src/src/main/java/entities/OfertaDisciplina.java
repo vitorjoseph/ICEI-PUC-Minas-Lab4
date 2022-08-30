@@ -60,15 +60,19 @@ public class OfertaDisciplina {
 	//#region METODOS ESPECIFICOS
 
 	public void adicionarAluno(Aluno aluno) {
-		this.alunos.add(aluno);
+		if(this.alunos.size() == 2) {
+			this.alunos.add(aluno);
+			this.ativo = true;
+		}
 	}
 
 	public boolean removerAluno(Aluno aluno) {
-		return this.alunos.remove(aluno);
-	}
-
-	public boolean ativarOferta() {
-		throw new Error("Not implemented!");
+		boolean removed = false;
+		if(this.alunos.size() == 3) {
+			removed = this.alunos.remove(aluno);
+			if(removed) this.ativo = false;
+		}
+		return removed;
 	}
 
 	//#endregion
