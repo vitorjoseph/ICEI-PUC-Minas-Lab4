@@ -17,6 +17,10 @@ public class Aluno extends Usuario {
 	}
 	//#endregion
 
+	public Aluno() {
+		super ();
+	}
+
 	//#region GETTERS e SETTERS
 	public ArrayList<Matricula> getMatriculas() {
 		return matriculas;

@@ -1,7 +1,6 @@
 package entities;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Professor extends Usuario {
 
@@ -15,6 +14,10 @@ public class Professor extends Usuario {
 		super(nome, senha, TipoUsuario.PROFESSOR);
 	}
 	//#endregion
+
+	public Professor() {
+		super ();
+	}
 
 	//#region GETTERS e SETTERS
 	public int getCodigo_prof() {

@@ -14,6 +14,10 @@ public class Admin extends Usuario {
         }
         //#endregion
 
+        public Admin() {
+            super();
+        }
+
         //#region GETTERS e SETTERS
         public int getCodigo_admin() {
             return codigo_admin;

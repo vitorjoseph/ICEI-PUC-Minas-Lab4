@@ -1,7 +1,7 @@
 package entities;
 
 import java.io.Serializable;
-import java.util.Date;
+
 
 public class Usuario implements Serializable {
 
@@ -13,6 +13,9 @@ public class Usuario implements Serializable {
 	private TipoUsuario tipo;
 
 	//#endregion
+
+	public Usuario() {
+	}
 
 	//#region CONSTRUCTOR
 	public Usuario(String username, String senha, TipoUsuario tipo) {
@@ -39,6 +42,22 @@ public class Usuario implements Serializable {
 		return this.username.equals(username) && this.senha.equals(senha);
 	}
 	//#endregion
+
+	public String getNomeDeUsuario() {
+		return username;
+	}
+
+	public void setNomeDeUsuario(String nomeDeUsuario) {
+		this.username = nomeDeUsuario;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+    public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
 
 

@@ -14,6 +14,9 @@ public class UsuarioFactory { //Factory method
 		else if (tipo.equalsIgnoreCase("professor")) {
 			Usuario = new Professor();
 		}
+		else if (tipo.equalsIgnoreCase("administrador")) {
+			Usuario = new Admin();
+		}
 
 		else {
 			throw new TipoInvalidoExcecao(" O " + tipo+ " não é um tipo válido para Usuario");

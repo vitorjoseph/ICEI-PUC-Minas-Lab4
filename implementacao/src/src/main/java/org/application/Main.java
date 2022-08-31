@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 import dao.DAO;
 import dao.DaoGenerico;
 import entities.Usuario;
+import entities.UsuarioFactory;
 import excecao.TipoInvalidoExcecao;
 
 public class Main {
@@ -23,7 +24,7 @@ public class Main {
 
 
         do {
-            System.out.println("\n                  *****      Xulamb Games 03      *****                ");
+            System.out.println("\n                 *****  Sistema de Gestão Academico  *****             ");
             System.out.println("       ================================================================= ");
             System.out.println("      |                                                                 |");
             System.out.println("      |    1.  Cadastrar Usuario                                        |");
@@ -51,6 +52,8 @@ public class Main {
                 }
 
         } while (!opcao.equals("0"));
+        daoUsuario.salvarTodos(listaUsuario);
+        System.out.println("Sistema encerrado!");
         }
 
         public static boolean validarOpcao(String opcao) {
@@ -76,14 +79,11 @@ public class Main {
 
             sc.nextLine();
     
-            System.out.println("Informe qual o tipo do Usuario entre Cadastrado, Empolgado e Fanatico: ");
+            System.out.println("Informe qual o tipo do Usuario entre Administrador, Professor e Aluno: ");
             String tipo = sc.nextLine();
             try {
                 Usuario Usuario = UsuarioFactory.creator(tipo);
-                
-                System.out.println("Informe o seu nome: ");
-                String nome = sc.nextLine();
-    
+
                 boolean validador = false;
                 String nomeDeUsuario;
                 do {
@@ -138,9 +138,8 @@ public class Main {
 
         public static boolean isValidPassword(String senha) {
 
-            String regex = "^(?=.*[0-9])"
-                    + "(?=.*[a-z])"
-                    + "(?=\\S+$).{8,20}$";
+            String regex = "(?=.*[a-z])"
+                    + "(?=\\S+$).{4,20}$";
             Pattern p = Pattern.compile(regex);
             if (senha == null) {
                 return false;
@@ -152,7 +151,7 @@ public class Main {
         public static void senhaInvalida() {
             System.out.println("\nFavor criar uma senha que respeita as sequintes regras:");
             System.out.println();
-            System.out.println("conter entre 8 e 20 caracteres.");
+            System.out.println("conter entre 4 e 20 caracteres.");
 
         }
     }
