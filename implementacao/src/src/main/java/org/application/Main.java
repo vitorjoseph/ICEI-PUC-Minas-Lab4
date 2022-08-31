@@ -25,6 +25,7 @@ public class Main {
     private static DAO<Usuario> daoUsuario = new DaoGenerico<>("Usuarios.DAT");
 
     public static void main(String[] args) throws Exception {
+        listaUsuario = daoUsuario.getAll();
 
         int autenticacao = login();
         switch (autenticacao) {
