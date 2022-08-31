@@ -10,12 +10,14 @@ public class Disciplina {
 	//#endregion
 
 	//#region CONSTRUCTOR
-	public Disciplina(String nome, int creditos, int preco) {
+	public Disciplina(String nome, int creditos, int preco, boolean obrigatoria) {
 		this.nome = nome;
 		this.creditos = creditos;
-		this.obrigatoria = false;
+		this.obrigatoria = obrigatoria;
 		this.preco = preco;
 	}
+
+	public Disciplina(){};
 	//#endregion
 
 	//#region GETTERS e SETTERS
