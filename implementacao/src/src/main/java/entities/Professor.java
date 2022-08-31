@@ -11,8 +11,8 @@ public class Professor extends Usuario {
 	//#endregion
 	
 	//#region CONSTRUCTOR
-	public Professor(String nome, Date data_nascimento, String endereco) {
-		super(nome, data_nascimento, endereco);
+	public Professor(String nome, String senha) {
+		super(nome, senha, TipoUsuario.PROFESSOR);
 	}
 	//#endregion
 

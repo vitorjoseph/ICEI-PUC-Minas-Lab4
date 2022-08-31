@@ -12,8 +12,8 @@ public class Aluno extends Usuario {
 	//#endregion
 
 	//#region CONSTRUCTOR
-	public Aluno(String nome, Date data_nascimento, String endereco) {
-		super(nome, data_nascimento, endereco);
+	public Aluno(String nome, String senha) {
+		super(nome, senha, TipoUsuario.ALUNO);
 	}
 	//#endregion
 
