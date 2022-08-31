@@ -1,8 +1,9 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Usuario {
+public abstract class Usuario implements Serializable {
 
 	//#region ATRIBUTOS
 
